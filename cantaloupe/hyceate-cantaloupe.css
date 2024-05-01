@@ -334,7 +334,7 @@ ul.notes,
 .media.fandom.index.group:after {
   display: block;
   content: "";
-  flex: 999 999 auto;
+  flex: 1 1 430px;
 }
 
 .listbox,
