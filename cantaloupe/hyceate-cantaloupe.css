@@ -67,9 +67,8 @@ body,
 
 #header .actions a:hover,
 #header .actions a:focus,
-#header .dropdown:hover a,
+#header ul .dropdown:hover a,
 #header .open a,
-#header li.dropdown.open a.dropdown-toggle,
 #header .user a:hover,
 #header .user a:focus {
   border-radius: 5px;
@@ -79,16 +78,16 @@ body,
 
 #header a,
 #header a:visited,
-#header .primary .open a,
-#header .primary .dropdown:hover a,
-#header .primary .dropdown a:focus {
+#header ul.primary .open a,
+#header ul.primary .dropdown:hover a,
+#header ul.primary .dropdown a:focus {
   color: #fff;
   border-radius: 5px;
 }
 
 #header .user a,
 #small_login .action,
-#header .primary .menu a,
+#header ul.primary .menu a,
 #greeting .dropdown .menu a {
   background-color: #6b705c;
   box-shadow: 0px 1px 0px #f87049;
@@ -97,8 +96,8 @@ body,
   color: #fff;
 }
 
-#header .dropdown .menu a:hover,
-#header .dropdown .menu a:focus {
+#header ul .dropdown .menu a:hover,
+#header ul .dropdown .menu a:focus {
   background-color: #cb6100;
   color: #fff;
 }
@@ -112,11 +111,37 @@ body,
   border-radius: 5px;
 }
 
+.dropdown:hover a,
+#header .open a {
+  background-color: #cb6100;
+}
+
 #header .user a,
 #small_login .action {
   background-color: #6b705c;
   border-radius: 5px;
   box-shadow: 0px 1px 0px #f87049;
+}
+
+.dropdown #small_login .footnote a {
+  color: #260e0e;
+  border-radius: 0px;
+  padding: 0 5px;
+}
+
+.dropdown #small_login .footnote a:hover {
+  color: #fff;
+}
+
+#small_login .action {
+  display: inline;
+  line-height: 1;
+  box-sizing: border-box;
+  padding: 1px .5rem;
+}
+
+p.submit.actions input[type=submit] {
+  padding: .2rem .5rem;
 }
 
 /* header bar */
@@ -182,23 +207,24 @@ button,
   box-shadow: 0 1px 0 #cb6100;
 }
 
-.disabled,
+span.disabled,
 .actions li .current {
-  transform: translate(0px, 1px);
   vertical-align: middle;
-  border-radius: .5em;
+  border-radius: .5rem;
   background-color: #a5a58d;
   color: #fff;
   border: 1px solid #260e0e;
   box-shadow: inset 0px 1px 0px #260e0e;
 }
 
-.disabled {
-  padding: 0.25em .75em 0.44em;
+li.previous {
+  display: inline-block;
+  line-height: 1;
 }
 
-.actions input[type=submit] {
-  padding: 3.5px 10px;
+.disabled {
+  box-sizing: border-box;
+  padding: 0.22rem .75rem;
 }
 
 .submit input[type=submit]:hover,
