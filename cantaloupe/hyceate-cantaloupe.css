@@ -50,6 +50,10 @@ body,
 }
 
 /* dropdown menus */
+.dropdown {
+  background-color: transparent;
+}
+
 #header .menu {
   background-color: transparent;
   background-image: none;
@@ -231,6 +235,13 @@ label.action:hover,
   margin: 0;
 }
 
+.splash .module div.account {
+  background: #ffe8d6;
+  border: 1px solid #cb6100;
+  border-radius: .5rem;
+  box-sizing: border-box;
+}
+
 /* notices */
 .notice,
 .comment_notice,
@@ -276,6 +287,47 @@ ul.notes,
 }
 
 /* !! WORKS RELATED LIST */
+/* fandoms */
+.media.fandom.index.group {
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 15px;
+}
+
+.listbox,
+fieldset fieldset.listbox,
+.listbox .index {
+  box-sizing: border-box;
+  background: #faedcd;
+  border: none;
+  padding: .5rem;
+  margin: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.media .listbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: .5rem;
+  border: 1px solid #cb6100;
+  margin: 0;
+}
+
+.index.group {
+  flex-grow: 1;
+}
+
+.medium.listbox.group .actions {
+  padding: 0;
+  padding-bottom: 1rem;
+  margin: 0;
+  align-self: end;
+}
+
 .blurb .header .heading,
 .blurb .header ul {
   font-size: 1rem;
@@ -423,8 +475,6 @@ fieldset {
   border: #cb6100 2px solid;
 }
 
-
-
 form.skin fieldset {
   border: #cb6100 2px solid;
 }
@@ -510,7 +560,7 @@ div.preface {
 }
 
 #workskin * {
-  line-height: 1.65;
+  line-height: 1.45;
 }
 
 #main>div.wrapper {
