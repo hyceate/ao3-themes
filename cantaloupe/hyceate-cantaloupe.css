@@ -11,6 +11,7 @@
 
 
 html {
+  width: 100%;
   background: #ccd5ae;
 }
 
@@ -29,12 +30,18 @@ body,
 }
 
 /* !! OUTER */
+#outer.wrapper {
+  width: 100%;
+}
+
 #outer.wrapper,
 #main,
 .listbox .index {
+  box-sizing: border-box;
+  font-size: unset;
   background-color: #ccd5ae;
   color: #260e0e;
-  line-height: 1.2;
+  line-height: unset;
 }
 
 /* !! HEADER */
@@ -317,9 +324,17 @@ ul.notes,
 .media.fandom.index.group {
   box-sizing: border-box;
   margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: auto;
+}
+
+.media.fandom.index.group:after {
+  display: block;
+  content: "";
+  flex: 999 999 auto;
 }
 
 .listbox,
@@ -335,12 +350,13 @@ fieldset fieldset.listbox,
 }
 
 .media .listbox {
+  flex: 1 1 420px;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  min-width: 25%;
   border-radius: .5rem;
   border: 1px solid #cb6100;
-  margin: 0;
+  margin: 5px;
 }
 
 .index.group {
