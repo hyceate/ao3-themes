@@ -24,9 +24,12 @@ a:link {
 
 /* !! FONT */
 body,
+a,
+.blurb,
+li,
 :is(h1, h2, h3, h4, h5, h6, .heading, input, textarea) :is(a),
 :is(h1, h2, h3, h4, h5, h6, .heading, input, textarea) {
-  font-family: "Atkinson Hyperlegible", "Trebuchet MS", "Roboto", "Rubik", sans-serif;
+  font-family: "Atkinson Hyperlegible", "Noto Sans", "Roboto", "Rubik", sans-serif;
 }
 
 /* !! OUTER */
@@ -41,7 +44,6 @@ body,
   font-size: unset;
   background-color: #ccd5ae;
   color: #260e0e;
-  line-height: unset;
 }
 
 /* !! HEADER */
@@ -74,10 +76,18 @@ body,
 
 #header .actions a:hover,
 #header .actions a:focus,
-#header ul .dropdown:hover a,
-#header .open a,
+#header ul.primary .open a,
 #header .user a:hover,
-#header .user a:focus {
+#header .user a:focus,
+#header ul.primary .dropdown a:hover,
+#header li.dropdown a:hover,
+#login .open a:hover,
+#header ul.user .dropdown .menu a:hover,
+#greeting .open a,
+#greeting .dropdown:hover a,
+#header ul.primary li.dropdown:hover a.dropdown-toggle,
+#header .dropdown .menu a:hover,
+#header .dropdown .menu a:focus {
   border-radius: 5px;
   color: #fff;
   background-color: #cb6100;
@@ -85,7 +95,8 @@ body,
 
 #header a,
 #header a:visited,
-#header ul.primary .open a,
+#header .primary .open a,
+#header ul.primary .dropdown a:hover,
 #header ul.primary .dropdown:hover a,
 #header ul.primary .dropdown a:focus {
   color: #fff;
@@ -103,12 +114,6 @@ body,
   color: #fff;
 }
 
-#header ul .dropdown .menu a:hover,
-#header ul .dropdown .menu a:focus {
-  background-color: #cb6100;
-  color: #fff;
-}
-
 #header h1.heading a {
   color: #8f1212;
 }
@@ -118,16 +123,14 @@ body,
   border-radius: 5px;
 }
 
-.dropdown:hover a,
-#header .open a {
-  background-color: #cb6100;
-}
-
 #header .user a,
-#small_login .action {
-  background-color: #6b705c;
-  border-radius: 5px;
-  box-shadow: 0px 1px 0px #f87049;
+#small_login .action,
+{
+background-color: #6b705c;
+border-radius: 5px;
+box-shadow: 0px 1px 0px #f87049;
+height: 100%;
+max-height: 100px;
 }
 
 .dropdown #small_login .footnote a {
@@ -206,17 +209,20 @@ input[type=submit],
 button,
 .current,
 .actions label {
+  line-height: normal;
+  font-size: .825rem;
   color: #260e0e;
   background-color: #ffc5ab;
   background-image: none;
   border: 1px solid #cb6100;
-  border-radius: .5em;
+  border-radius: .5rem;
   box-shadow: 0 1px 0 #cb6100;
 }
 
 span.disabled,
 .actions li .current {
-  vertical-align: middle;
+  font-size: .825rem;
+  line-height: normal;
   border-radius: .5rem;
   background-color: #a5a58d;
   color: #fff;
@@ -224,13 +230,9 @@ span.disabled,
   box-shadow: inset 0px 1px 0px #260e0e;
 }
 
-li.previous {
-  display: inline-block;
-  line-height: 1;
-}
-
 .disabled {
-  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
   padding: 0.22rem .75rem;
 }
 
@@ -243,11 +245,12 @@ li.previous {
 .actions input:focus,
 label.action:hover,
 #main .action:hover,
-#main .action:focus {
-  color: #ffe8d6;
-  background-color: #cb997e;
-  border: 1px solid #cb6100;
-  box-shadow: 0 1px 0 #cb6100;
+#main .action:focus,
+{
+color: #ffe8d6;
+background-color: #cb997e;
+border: 1px solid #cb6100;
+box-shadow: 0 1px 0 #cb6100;
 }
 
 :is(#main) :is(.actions a:hover, .actions a:visited:hover, input:hover, .action:hover, .action:focus) {
@@ -320,7 +323,7 @@ ul.notes,
 }
 
 /* !! WORKS RELATED LIST */
-/* fandoms */
+/* lists */
 .media.fandom.index.group {
   box-sizing: border-box;
   margin-top: 10px;
@@ -341,10 +344,8 @@ ul.notes,
 fieldset fieldset.listbox,
 .listbox .index {
   box-sizing: border-box;
-  background: #faedcd;
   border: none;
   padding: .5rem;
-  margin: 0;
   overflow: hidden;
   box-shadow: none;
 }
@@ -370,6 +371,70 @@ fieldset fieldset.listbox,
   align-self: end;
 }
 
+.user .fandom.group,
+.user .work.listbox.group,
+.user .bookmark.listbox.group {
+  border: 1px solid #cb6100;
+  background-color: #d4a373;
+  border-radius: .5rem;
+}
+
+.fandom.index.group h3,
+.fandom.index.group h3 a {
+  color: #8f1212;
+  margin-bottom: .5rem;
+}
+
+.fandom.index.group li.listbox {
+  border: 2px solid #cb6100;
+  background-color: #d4a373;
+  border-radius: .5rem;
+}
+
+.fandom.index.group li.listbox a {
+  margin-top: 1.5rem;
+}
+
+/* info pages */
+.parent.listbox.group {
+  background-color: #d4a373;
+  border: solid #cb6100;
+  border-width: 2px;
+  border-radius: .5rem .5rem 0 0;
+}
+
+.listbox.group .index.group {
+  background-color: #faedcd;
+}
+
+.tag.home ul.tags.commas,
+.tag.home ul.tags.tree,
+.fandom .tags.index.group,
+.tag.home ol.index.group {
+  border: 1px solid #cb6100;
+  background-color: #faedcd;
+}
+
+.parent.listbox.group,
+.synonym.listbox.group,
+.sub.listbox.group,
+.child.listbox.group {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #d4a373;
+}
+
+.synonym.listbox.group,
+.sub.listbox.group,
+.child.listbox.group {
+  border: solid #cb6100;
+  border-width: 0px 2px 2px 2px;
+}
+
+.child.listbox.group {
+  border-radius: 0 0 .5rem .5rem;
+}
+
 .blurb .header .heading,
 .blurb .header ul {
   font-size: 1rem;
@@ -380,9 +445,13 @@ fieldset fieldset.listbox,
 }
 
 .css.module,
-.bookmark.index.group,
+.bookmark.blurb.group,
 ul.series li.work.blurb,
-ol.work.index.group li.blurb {
+ol.work.index.group li.blurb,
+li.collection,
+li.own.work,
+#user-fandoms .index.group,
+ul.tags.cloud {
   padding: 1rem 1.2rem;
   font-size: .9rem;
   border-radius: .5rem;
@@ -395,20 +464,23 @@ ol.work.index.group li.blurb {
   margin-top: 1rem;
 }
 
+.bookmark .user {
+  border: 1px solid #cb6100;
+  border-radius: .5rem;
+  margin-top: .643em;
+  padding: .429em .75em;
+  overflow: hidden;
+  background-color: #fefae0;
+}
+
 .own.user.module.group {
   background: #fefae0;
   border-radius: .5rem;
   border: 2px solid #cb6100;
 }
 
-.bookmark.index.group li.bookmark {
-  border: none;
-  margin: 0;
-}
-
 .css.module {
   padding: 1rem;
-
 }
 
 ol.work.index.group li.blurb ul.required-tags,
@@ -552,7 +624,7 @@ form dl {
 }
 
 .toggled form p.footnote {
-  line-height: 1;
+  line-height: normal;
 }
 
 /* !! READING PAGE */
@@ -560,7 +632,7 @@ form dl {
   background-color: #ffe8d6;
   border-radius: .5em;
   box-shadow: none;
-  max-width: 76.3rem;
+  max-width: 72rem;
   margin: 0 auto;
 }
 
@@ -602,7 +674,7 @@ div.preface {
 }
 
 #workskin * {
-  line-height: 1.45;
+  line-height: 1.25;
 }
 
 #main>div.wrapper {
@@ -612,7 +684,7 @@ div.preface {
 blockquote p,
 .userstuff p,
 .userstuff details {
-  line-height: 1.65;
+  line-height: 1.25;
 }
 
 #workskin .module {
