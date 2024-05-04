@@ -19,13 +19,14 @@ html {
 a,
 a:link {
   color: #cb6100;
-  text-decoration: none;
 }
 a:hover,a:visited:hover, a.tag:hover, .listbox .heading a.tag:visited:hover, .splash .link a:hover,a.resp-sharing-button__link, a.resp-sharing-button__link:hover{
   color: #fff;
   background-color:#f87049;
+}
+a.resp-sharing-button__link{
   border-radius:5px;
-  border-bottom: 1px solid;
+  background-color:none;
 }
 /* !! FONT */
 body,
@@ -34,7 +35,7 @@ a,
 li,
 :is(h1, h2, h3, h4, h5, h6, .heading, input, textarea) :is(a),
 :is(h1, h2, h3, h4, h5, h6, .heading, input, textarea) {
-  font-family: "Atkinson Hyperlegible Pro", "Atkinson Hyperlegible", system-ui, "Roboto", "Rubik", sans-serif;
+  font-family: "Atkinson Hyperlegible Pro", "Atkinson Hyperlegible", "Roboto", "Rubik", sans-serif, system-ui;
 }
 
 /* !! OUTER */
@@ -653,6 +654,7 @@ form dl {
 
 /* !! READING PAGE */
 #main.works-show {
+  width:100%;
   max-width: 72rem;
 }
 
@@ -754,6 +756,7 @@ p.kudos {
   background: transparent;
   padding: .3rem;
   overflow-x: clip;
+  word-break: break-all;
 }
 
 @media only screen and (max-width: 62rem),
