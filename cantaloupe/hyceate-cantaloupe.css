@@ -459,9 +459,16 @@ fieldset fieldset.listbox,
 .blurb .header ul {
   font-size: 1rem;
 }
-
+.blurb .header .heading{
+margin: .375em 2.25em 0 65px;
+}
+h5.fandoms.heading{
+  overflow: scroll;
+  max-height: 100px;
+}
 .blurb .datetime {
-  max-width: 10dvw;
+  max-width: 7dvw;
+  text-align: right;
 }
 
 .css.module,
