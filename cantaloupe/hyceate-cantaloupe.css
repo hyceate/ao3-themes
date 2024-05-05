@@ -630,7 +630,7 @@ dd.hideme,
 form blockquote.userstuff {
   display: block;
   background: #ffe8d6;
-  margin: 0.643rem;
+  margin: 0.643rem auto;
   padding: 0.643rem;
   box-shadow: none;
   border-radius: 0.5rem;
@@ -703,6 +703,7 @@ form dl {
 #main.works-show,
 #main .wrapper .work.meta.group,
 #workskin {
+  width: 100%;
   max-width: 72rem;
 }
 
@@ -725,6 +726,10 @@ form dl {
 
 #main .wrapper .work.meta.group {
   font-size: 1rem;
+}
+
+.wrapper {
+  box-shadow: none;
 }
 
 .user dl.meta,
@@ -915,6 +920,28 @@ div.comment {
   background: #cb997e;
   border-top: 2px #f87049 solid;
   color: #260e0e;
+}
+
+#footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: start;
+}
+
+#footer .menu {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+#footer li {
+  margin: .2rem 0;
+}
+
+#footer .module {
+  min-width: 100px;
 }
 
 #footer .module {
