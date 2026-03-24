@@ -1,7 +1,14 @@
 #colorPalette {
-  color: #ccd5ae #e9edc9 #fefae0 #faedcd #d4a373 #cb997e #ddbea9 #ffe8d6 #b7b7a4 #a5a58d #6b705c #260e0e #cb6100 #db0000 #007dc0;
+  color: #ccd5ae #e9edc9 #fefae0 #faedcd #d4a373 #cb997e #ddbea9 #ffe8d6 #b7b7a4
+    #a5a58d #6b705c #260e0e #cb6100 #db0000 #007dc0;
 }
-
+:root {
+  --main-bg-color: #ccd5ae;
+  --base-link-color: #cb6100;
+  --border-dark-color: #cb6100;
+  --border-light-color: #f87049;
+  --secondary-bg-color: #ffe8d6;
+}
 *,
 ::before,
 ::after {
@@ -11,14 +18,14 @@
 
 html {
   width: 100%;
-  background: #ccd5ae;
+  background: var(--main-bg-color);
 }
 
 /* GENERAL */
 a,
 a:link,
 .blurb h4 a:link {
-  color: #cb6100;
+  color: var(--base-link-color);
 }
 
 a:hover,
@@ -44,25 +51,11 @@ body,
 a,
 .blurb,
 li,
-:is(h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .heading,
-  input,
-  textarea) :is(a),
-:is(h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .heading,
-  input,
-  textarea) {
-  font-family: "Atkinson Hyperlegible Pro", "Atkinson Hyperlegible", "Roboto", "Rubik", sans-serif, system-ui;
+:is(h1, h2, h3, h4, h5, h6, .heading, input, textarea) :is(a),
+:is(h1, h2, h3, h4, h5, h6, .heading, input, textarea) {
+  font-family:
+    "Atkinson Hyperlegible Pro", "Atkinson Hyperlegible", "Roboto", "Rubik",
+    sans-serif, system-ui;
 }
 
 /* !! OUTER */
@@ -75,14 +68,14 @@ li,
 .listbox .index {
   box-sizing: border-box;
   font-size: unset;
-  background-color: #ccd5ae;
+  background-color: var(--main-bg-color);
   color: #260e0e;
 }
 
 /* !! HEADER */
 #header {
   font-size: 1rem;
-  background-color: #ffe8d6;
+  background-color: var(--secondary-bg-color);
 }
 
 /* remove logo */
@@ -126,7 +119,7 @@ li,
 #header .dropdown a#login-dropdown:hover {
   border-radius: 5px;
   color: #fff;
-  background-color: #cb6100;
+  background-color: var(--base-link-color);
 }
 
 #header a,
@@ -146,8 +139,8 @@ li,
 #greeting .dropdown .menu a,
 #header .dropdown a#login-dropdown {
   background-color: #6b705c;
-  box-shadow: 0px 1px 0px #f87049;
-  border: 1px solid #f87049;
+  box-shadow: 0px 1px 0px var(--border-light-color);
+  border: 1px solid var(--border-light-color);
   border-radius: 5px;
   color: #fff;
 }
@@ -163,7 +156,7 @@ li,
 
 #small_login {
   border-radius: 0 0 0 0.25rem;
-  border: 2px solid #cb6100;
+  border: 2px solid var(--base-link-color);
   background: #ffe8d6;
 }
 
@@ -200,8 +193,8 @@ p.submit.actions input[type="submit"] {
 #header .primary {
   background: #6b705c;
   box-shadow: none;
-  border-bottom: #f87049 5px solid;
-  border-top: #f87049 1px solid;
+  border-bottom: 5px solid var(--border-light-color);
+  border-top: 1px solid var(--border-light-color);
 }
 
 #header ul.primary.navigation.actions li.dropdown {
@@ -214,13 +207,12 @@ p.submit.actions input[type="submit"] {
 
 #header #search input:focus {
   color: #260e0e;
-  outline: 1px dotted #cb6100;
+  outline: 1px dotted var(--border-dark-color);
 }
 
 /* buttons and navigations */
 .actions input.text,
 .actions label {
-  background-image: linear-gradient(#ffe8d6 2%, #ffe8d6 95%, #cb6100 100%);
   box-shadow: none;
 }
 
@@ -258,14 +250,16 @@ ol.pagination li {
 .actions input,
 input[type="submit"],
 button,
+button[type="submit"],
+button.collapsed,
+button.expanded,
 .current,
 .actions label {
-  vertical-align: baseline;
   font-size: 0.9rem;
   color: #260e0e;
   background-color: #ffc5ab;
   background-image: none;
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   border-radius: 0.5rem;
   height: auto;
 }
@@ -300,16 +294,19 @@ label.action:hover,
 #main .action:focus {
   color: #ffe8d6;
   background-color: #cb997e;
-  border: 1px solid #cb6100;
-  box-shadow: inset 0 2px 0 #cb6100;
+  border: 1px solid var(--border-dark-color);
+  box-shadow: inset 0 2px 0 var(--border-dark-color);
 }
 
-:is(#main) :is(.actions a:hover,
-  .actions a:visited:hover,
-  .action:hover,
-  .action:focus) {
-  border: 1px solid #cb6100;
-  box-shadow: inset 0 2px 0 #cb6100;
+:is(#main)
+  :is(
+    .actions a:hover,
+    .actions a:visited:hover,
+    .action:hover,
+    .action:focus
+  ) {
+  border: 1px solid var(--border-dark-color);
+  box-shadow: inset 0 2px 0 var(--border-dark-color);
 }
 
 .actions a:visited,
@@ -327,7 +324,7 @@ label.action:hover,
 
 .splash .module div.account {
   background: #ffe8d6;
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   border-radius: 0.5rem;
   box-sizing: border-box;
 }
@@ -345,7 +342,7 @@ ul.notes,
   box-sizing: border-box;
   width: 100%;
   background-color: #faedcd;
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   box-shadow: inset 2px 2px 1px #cb997e;
 }
 
@@ -355,8 +352,8 @@ ul.notes,
 }
 
 .splash .module h3 {
-  border-bottom: 1px solid #cb6100;
-  color: #cb6100;
+  border-bottom: 1px solid var(--border-dark-color);
+  color: var(--border-dark-color);
 }
 
 .splash .link a {
@@ -373,7 +370,7 @@ ul.notes,
 }
 
 .splash .favorite li:nth-of-type(even) a:hover {
-  background: #cb6100;
+  background: var(--border-dark-color);
   color: #fff;
 }
 
@@ -411,7 +408,7 @@ fieldset fieldset.listbox,
   flex-direction: column;
   min-width: 25%;
   border-radius: 0.5rem;
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   margin: 5px;
 }
 
@@ -429,7 +426,7 @@ fieldset fieldset.listbox,
 .user .fandom.group,
 .user .work.listbox.group,
 .user .bookmark.listbox.group {
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   background-color: #d4a373;
   border-radius: 0.5rem;
 }
@@ -441,7 +438,7 @@ fieldset fieldset.listbox,
 }
 
 .fandom.index.group li.listbox {
-  border: 2px solid #cb6100;
+  border: 2px solid var(--border-dark-color);
   background-color: #d4a373;
   border-radius: 0.5rem;
 }
@@ -453,7 +450,7 @@ fieldset fieldset.listbox,
 /* info pages */
 .parent.listbox.group {
   background-color: #d4a373;
-  border: solid #cb6100;
+  border: solid var(--border-dark-color);
   border-width: 2px;
   border-radius: 0.5rem 0.5rem 0 0;
 }
@@ -466,7 +463,7 @@ fieldset fieldset.listbox,
 .tag.home ul.tags.tree,
 .fandom .tags.index.group,
 .tag.home ol.index.group {
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   background-color: #faedcd;
 }
 
@@ -482,7 +479,7 @@ fieldset fieldset.listbox,
 .synonym.listbox.group,
 .sub.listbox.group,
 .child.listbox.group {
-  border: solid #cb6100;
+  border: solid var(--border-dark-color);
   border-width: 0px 2px 2px 2px;
 }
 
@@ -521,7 +518,7 @@ ul.tags.cloud {
   font-size: 0.9rem;
   border-radius: 0.5rem;
   background-color: #ffe8d6;
-  border: 2px solid #cb6100;
+  border: 2px solid var(--border-dark-color);
   box-sizing: border-box;
 }
 
@@ -530,7 +527,7 @@ ul.tags.cloud {
 }
 
 .bookmark .user {
-  border: 1px solid #cb6100;
+  border: 1px solid var(--border-dark-color);
   border-radius: 0.5rem;
   margin-top: 0.643em;
   padding: 0.429em 0.75em;
@@ -541,7 +538,7 @@ ul.tags.cloud {
 .own.user.module.group {
   background: #fefae0;
   border-radius: 0.5rem;
-  border: 2px solid #cb6100;
+  border: 2px solid var(--border-dark-color);
 }
 
 .css.module {
@@ -572,7 +569,7 @@ li.warnings a.tag {
   font-size: 0.9rem;
 }
 
-dd.warning.tags>ul>li>a,
+dd.warning.tags > ul > li > a,
 li.warnings a.tag,
 li.warnings a.tag:visited {
   color: #db0000;
@@ -595,10 +592,10 @@ dt.character.tags,
 dd.character.tags a,
 .characters .tag,
 .work .characters a.tag {
-  color: #cb6100;
+  color: var(--border-dark-color);
 }
 
-dd.freeform.tags>ul>li>a,
+dd.freeform.tags > ul > li > a,
 li.freeforms a.tag {
   color: #007dc0;
 }
@@ -608,7 +605,7 @@ li.characters a.tag:hover,
 li.relationships a.tag:hover,
 li.freeforms a.tag:hover,
 .listbox .heading a.tag:visited:hover {
-  background: #cb6100;
+  background: var(--border-dark-color);
   color: #fff;
 }
 
@@ -642,7 +639,7 @@ li.input.highlighted {
 }
 
 li.input input {
-  border: #cb6100 1px solid;
+  border: 1px solid var(--border-dark-color);
 }
 
 #bookmark-form {
@@ -650,16 +647,16 @@ li.input input {
 }
 
 .javascript .filters fieldset {
-  border: #cb6100 2px solid;
+  border: 2px solid var(--border-dark-color);
 }
 
 #bookmark_form_placement,
 fieldset {
-  border: #cb6100 2px solid;
+  border: 2px solid var(--border-dark-color);
 }
 
 form.skin fieldset {
-  border: #cb6100 2px solid;
+  border: 2px solid var(--border-dark-color);
 }
 
 form dt {
@@ -673,7 +670,7 @@ form dt button.expander {
 form.verbose legend,
 .verbose form legend {
   background: #ffe8d6;
-  border: 2px solid #cb6100;
+  border: 2px solid var(--border-dark-color);
 }
 
 form dl {
@@ -682,7 +679,7 @@ form dl {
 }
 
 #new_collection_item dl {
-  border: 2px solid #cb6100;
+  border: 2px solid var(--border-dark-color);
 }
 
 .toggled form,
@@ -700,6 +697,9 @@ form dl {
 }
 
 /* !! READING PAGE */
+#main {
+  padding-inline: 2%;
+}
 #main.works-show,
 #main .wrapper .work.meta.group,
 #workskin {
@@ -738,7 +738,7 @@ dl.work.meta.group {
   background: #ffe8d6;
   padding: 1.35rem 1.3rem;
   border-radius: 0.5rem;
-  border: 2px #cb6100 solid;
+  border: 2px solid var(--border-dark-color);
 }
 
 dl.work.meta.group {
@@ -758,7 +758,7 @@ dl.work.meta.group {
   align-items: center;
   flex: 0 1 auto;
   background: #cb997e;
-  border: 2px solid #cb6100;
+  border: 2px solid var(--border-dark-color);
   box-shadow: none;
   border-radius: 0.5rem;
 }
@@ -776,7 +776,6 @@ div.preface {
 /* work text */
 #workskin {
   background-color: #ffe8d6;
-  font-size: 1.1rem;
   padding: 0;
   position: relative;
   border: #cb997e solid;
@@ -818,11 +817,10 @@ p.kudos {
   word-break: break-all;
 }
 
-@media only screen and (max-width: 62rem),
-handheld {
+@media only screen and (max-width: 62rem), handheld {
   #main.works-show {
     padding-left: 0.45rem;
-    padding-right: 0.55rem;
+    padding-right: 0.45rem;
   }
 }
 
@@ -865,7 +863,7 @@ div.comment {
 .thread .odd,
 .thread .even {
   border-radius: 5px 5px 0px 0px;
-  border-color: #cb6100;
+  border-color: var(--border-dark-color);
 }
 
 .thread .odd {
@@ -889,12 +887,12 @@ div.comment {
 #dashboard.own {
   border-radius: 0.25rem;
   background-color: #faedcd;
-  border-color: #cb6100;
+  border-color: var(--border-dark-color);
 }
 
 #dashboard,
 #dashboard ul {
-  border-color: #cb6100;
+  border-color: var(--border-dark-color);
 }
 
 #dashboard ul .current {
@@ -918,7 +916,7 @@ div.comment {
 #footer {
   font-size: 0.86rem;
   background: #cb997e;
-  border-top: 2px #f87049 solid;
+  border-top: 2px solid var(--border-light-color);
   color: #260e0e;
 }
 
@@ -937,7 +935,7 @@ div.comment {
 }
 
 #footer li {
-  margin: .2rem 0;
+  margin: 0.2rem 0;
 }
 
 #footer .module {
