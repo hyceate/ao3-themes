@@ -512,7 +512,9 @@ h5.fandoms.heading {
   overflow: scroll;
   max-height: 100px;
 }
-
+.bookmark div.user .datetime {
+  max-width: none;
+}
 .blurb .datetime {
   max-width: 10dvw;
   text-align: right;
@@ -627,7 +629,9 @@ li.work.blurb blockquote.userstuff.summary p {
 }
 
 /* filter and forms stuff */
-
+.filters .tags li {
+  font-size: 0.7rem;
+}
 fieldset,
 form dl,
 fieldset dl dl,
@@ -639,8 +643,7 @@ dd.hideme,
 form blockquote.userstuff {
   display: block;
   background: #ffe8d6;
-  margin: 0.643rem auto;
-  padding: 0.643rem;
+  padding: 0.5rem;
   box-shadow: none;
   border-radius: 0.5rem;
 }
@@ -707,7 +710,10 @@ form dl {
 .toggled form p.footnote {
   line-height: 1.3;
 }
-
+.javascript form.filters {
+  right: -14rem;
+  width: 15rem;
+}
 /* !! READING PAGE */
 #main {
   padding-inline: 2%;
