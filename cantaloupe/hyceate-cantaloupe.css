@@ -266,7 +266,9 @@ button[type="submit"],
 button.collapsed,
 button.expanded,
 .current,
-.actions label {
+.actions label,
+span.unread,
+.replied {
   font-size: 0.9rem;
   color: #260e0e;
   background-color: #ffc5ab;
@@ -844,7 +846,7 @@ p.kudos {
 
 /* comments */
 .datetime {
-  font-size: 0.9rem;
+  font-size: 80%;
 }
 #add_comment_placeholder fieldset p * {
   box-sizing: content-box;
@@ -875,22 +877,23 @@ div.comment {
   border-radius: 5px;
 }
 
-.thread h4.heading {
-  background-color: #ffe8d6;
-  border-bottom: 1px solid;
-}
-
-.thread h4.heading,
+.comment h4.byline,
+.thread h4.heading .thread h4.heading,
 .thread .odd,
-.thread .even {
+.thread .even,
+li.comment {
   border-radius: 5px 5px 0px 0px;
   border-color: var(--border-dark-color);
+  font-size: 100%;
+  background-color: #ffe8d6;
 }
 
 .thread .odd {
   background: #e9edc9;
 }
 
+.unread,
+li.comment,
 .thread .even {
   background: #fefae0;
 }
