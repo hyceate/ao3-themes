@@ -733,7 +733,9 @@ form dl {
   box-shadow: none;
   margin: 0 auto;
 }
-
+blockquote {
+  font: inherit;
+}
 /* work info */
 .work .wrapper {
   display: flex;
